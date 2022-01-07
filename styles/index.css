@@ -10,7 +10,7 @@ li {
     color: orange
 }
 
-#me {
-    width: 100px;
-    height: 150px;
+.me {
+    width: 300px;
+    height: auto;
 }
