@@ -10,7 +10,7 @@ li {
     color: orange
 }
 
-.me {
+#me {
     max-width: 100%;
     height: auto;
 }
