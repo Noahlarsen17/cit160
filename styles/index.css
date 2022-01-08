@@ -1,13 +1,13 @@
 h1 {
-    color: lightblue
+    color: darkblue;
 }
 
 h2 {
-    color: lightblue
+    color: darkblue;
 }
 
 li {
-    color: orange
+    color: orange;
 }
 
 #me {
@@ -16,5 +16,5 @@ li {
 }
 
 footer {
-    color: lightblue
+    color: lightblue;
 }
