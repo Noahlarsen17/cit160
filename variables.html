@@ -7,6 +7,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/variables.css">
     <title>CIT 160 - Car Registration</title>
+    <script>function getTotalDue() {
+        //declarations
+        let totalAmountDue = 100;
+        
+        //input - Discount amount
+        const discount = document.getElementById('discount').value;
+
+        //processing - total amount minus discount amount
+        let total = totalAmountDue - discount
+        //output
+        document.querySelector('#total').textContent = `Total Amount Due: $${total.toFixed(2)}`;
+    }</script>
 </head>
 <header>
     <h1>Vehicle Registration</h1>
@@ -18,11 +30,11 @@
     <input type="text" id="make">
     <label for="make">Vehicle Model: </label>
     <input type="text" id="model">
-    <label for="discount">Discount Amount: </label><input type="number" id="discount">
+    <label for="discount">Discount Amount: </label>
+    <input type="number" id="discount">
     <div class="processing"><button onclick="getTotalDue()">Compute Total</button></div>
     </div>
-
-    let totalAmountDue = 100
+    <p id="total"></p>
 
 </main>
 <footer>©️2022 | Noah Larsen | CIT 160</footer>
