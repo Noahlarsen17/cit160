@@ -7,12 +7,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Numbers and Operators</title>
     <link rel="stylesheet" href="styles/math.css">
+    <script>
+        function getTotal() {
+            //declarations - None
+            
+            //input - Quantity, Pricing, Discount and Tax
+            const q1 = document.getElementById('q1').value;
+            const p1 = document.getElementById('p1').value;
+            const q2 = document.getElementById('q2').value;
+            const p2 = document.getElementById('p2').value;
+            const q3 = document.getElementById('q3').value;
+            const p3 = document.getElementById('p3').value;
+            const discount = document.getElementById('discount').value;
+            const tax = document.getElementById('tax').value;
+
+            //processing - total with discount and tax
+            let total = (q1*p1)+(q2*p2)+(q3*p3);
+            total = total - (total * discount);
+            total = total + (total * tax);
+
+            //output
+            document.querySelector('#output').textContent = `Total Amount: $${total.toFixed(2)}`;
+        }
+    </script>
 </head>
 
 <body>
     <header>
         <h1>Sales Slip</h1>
-        <h2>Student Name</h2>
+        <h2>Noah Larsen</h2>
     </header>
     <main>
         <h3>Line Items</h3>
