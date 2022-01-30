@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles/strings.css">
+    <script>
+        function makeStory() {
+            //declarations - None
+
+            //input
+            const firstname = document.getElementById('firstname').value;
+            const fruit = document.getElementById('fruit').value;
+            const animal1 = document.getElementById('animal1').value;
+            const animal2 = document.getElementById('animal2').value;
+            //processing
+
+            //output
+            document.querySelector('#output').textContent =
+                `And it came to pass that the people of ${firstname} did till the land, and raise all manner of ${fruit}, and flocks of herds, and flocks of all manner of ${animal1} of every kind, and ${animal2}.`;
+        }
+    </script>
+</head>
+
+<body>
+    <header>
+        <h1>Scripture Story Build</h1>
+        <h2>Noah Larsen</h2>
+    </header>
+    <main>
+        <h3>Inputs</h3>
+        <label class="heading">Provide a first name: <input type="text" id="firstname" placeholder="Sarah"></label>
+        <label class="heading">Name a fruit: <input type="text" id="fruit" placeholder="apple"></label>
+        <label class="heading">Name an animal: <input type="text" id="animal1" placeholder="horse"></label>
+        <label class="heading">Name another animal: <input type="text" id="animal2" placeholder="lamb"></label>
+
+        <div class="process"><button onclick="makeStory()">Build Story</button>
+        </div>
+        <p id="output"></p>
+    </main>
+    <footer>
+        &copy;<span id="copyright"></span> &bull; Noah Larsen &bull; BYU-Idaho &bull; CIT 160
+    </footer>
+</body>
+
+</html>
