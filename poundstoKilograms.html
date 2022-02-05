@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pounds to Kilograms</title>
+    <link rel = "stylesheet" href = "styles/pounds.css">
+    <script>
+        function calculateKilograms() {
+            //declarations - none
+
+            //input -  Get Pounds
+                const pounds = document.getElementById('pounds').value;
+            //processing - Convert pounds to kilograms and round kilograms to 1 decimal point
+                let kilograms = pounds * 0.453592
+                kilograms = parseFloat(kilograms.toFixed(1))
+            //output - Display the conversion with rounded decimal.
+                document.querySelector('#output').textContent = `${pounds} lbs is equal to ${kilograms} kgs.`
+        }   
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Pounds to Kilograms</h1>
+        <h2>Noah Larsen</h2>
+    </header>
+    <main>
+        <h3>Inputs</h3>
+        <label class="heading">Pounds <input type="text" id="pounds" placeholder="10 lbs"></label>
+
+        <div class="process"><button onclick="calculateKilograms()">Convert to Kilograms</button>
+        </div>
+        <p id="output"></p>
+    </main>
+    <footer>
+        &copy;<span id="copyright">2022</span> &bull; Noah Larsen &bull; BYU-Idaho &bull; CIT 160
+    </footer>
+</body>
+</html>
