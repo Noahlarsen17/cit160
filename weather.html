@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Shoe</title>
+    <script>
+        function getShoe() {
+            //declarationsEach weather has own shoe
+                const hot = 'sandals'
+                const rain = 'galoshes'
+                const snow = 'boots'
+            //input/processing If statement finding which has been selected
+                if (document.getElementById('footwear').value == 1) {
+                    shoes = hot
+                }
+                else if (document.getElementById('footwear').value == 2) {
+                    shoes = rain
+                }
+                else if (document.getElementById('footwear').value == 3) {
+                    shoes = snow
+                }
+            //output Showing which shoe is best for weather
+                document.querySelector('#output').textContent = `Your best shoes for your selected weather is ${shoes}!`
+        }
+    </script>
+</head>
+
+<header>
+    <h1>Perfect Weather Shoes</h1>
+    <h2>Noah Larsen</h2>
+</header>
+<body>
+    <select id = 'footwear'>
+        <option value="0">Weather</option>
+        <option value="1">Hot</option>
+        <option value="2">Rain</option>
+        <option value="3">Snow</option>
+    </select>
+
+    <button id = 'shoes' onclick="getShoe()">Your best SHOES</button>
+    <p id="output"></p>
+</body>
+</html>
