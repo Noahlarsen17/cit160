@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sales Conditional Discount</title>
+    <script>
+        function getTotal() {
+            //declarations
+            const tax = .06
+            
+            //inputs
+            let subtotal = parseFloat(document.getElementById('subtotal').value)
+            //processing
+            if ((document.getElementById('day').value == 2 || document.getElementById('day').value == 3) && subtotal >= 50) {
+                discount = subtotal * .10
+                total_no_tax = subtotal - discount
+                total = total_no_tax + (total_no_tax * tax)
+            } else {
+                total = subtotal + (subtotal * tax)
+            }
+
+            //output
+            document.querySelector('#output').textContent = `Your total is: $${total.toFixed(2)}!`
+        }
+    </script>
+</head>
+
+<body>
+    <header>
+        <h1>Sales Slip</h1>
+        <h2>Noah Larsen</h2>
+    </header>
+    <main>
+        <select id='day'>
+            <option value="1">Monday</option>
+            <option value="2">Tuesday</option>
+            <option value="3">Wednesday</option>
+            <option value="4">Thursday</option>
+            <option value="5">Friday</option>
+            <option value="6">Saturday</option>
+            <option value="7">Sunday</option>
+        </select>
+        <label class="heading">Subtotal of Items: <input type="text" id="subtotal" placeholder="54.50"></label>
+        <button id='shoes' onclick="getTotal()">Find Total</button>
+        <p id="output"></p>
+    </main>
+    <footer>
+        &copy;<span id="copyright">2022</span> &bull; Noah Larsen &bull; BYU-Idaho &bull; CIT 160
+    </footer>
+</body>
+
+</html>
