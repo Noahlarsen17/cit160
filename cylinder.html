@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Volume of Cylinder</title>
+    <script>
+        function volume() {
+            //declarations - None
+
+            //input - Gets the radius and height from user
+            const radius = document.getElementById('radius').value;
+            const height = document.getElementById('height').value;
+
+            //processing - Calculates the volume of cylinder
+            
+            let volume = Math.PI * Math.pow(radius,2) * height;
+            volume = parseFloat(Math.round(volume));
+
+            //output - Displays the volume of cylinder to user
+            document.querySelector('#output').textContent = `Volume: ${volume}`;
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Find Volume of Cylinder</h1>
+        <h2>Noah Larsen</h2>
+    </header>
+    <main>
+        <h3>Inputs</h3>
+        <label class="heading">Radius: <input type="text" id="radius" placeholder="4"></label>
+        <label class="heading">Height: <input type="text" id="height" placeholder="2"></label>
+
+        <div class="process"><button onclick="volume()">Find Volume</button>
+        </div>
+        <p id="output"></p>
+    </main>
+    <footer>
+        &copy;<span id="copyright">2022</span> &bull; Noah Larsen &bull; BYU-Idaho &bull; CIT 160
+    </footer>
+</body>
+</html>

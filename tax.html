@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>After Tax Pay Calculator</title>
+    <script>
+        function totalPay() {
+            //declarations - Amount the employee gets paid for normal hours and overtime as well as the tax rate
+            const hourlyPay = 15.00
+            const overtimePay = 22.50
+            const taxRate = .15
+
+            //input - Gets hours for Normal and Overtime for the worker
+            const hoursWorked = document.getElementById('normal').value;
+            const overtimeWorked = document.getElementById('overtime').value;
+
+            //processing - Calculates the net pay that the employee makes
+            let normalMade = hourlyPay * hoursWorked;
+            let overtimeMade = overtimePay * overtimeWorked;
+            let grossPay = normalMade + overtimeMade;
+            let taxAmount = grossPay * taxRate;
+            let netPay = grossPay - taxAmount;
+            netPay = parseFloat(netPay.toFixed(2));
+
+            //output - Displays the Net Pay to employee
+            document.querySelector('#output').textContent = `Your net income is $ ${netPay}!`;
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>After Tax Pay</h1>
+        <h2>Noah Larsen</h2>
+    </header>
+    <main>
+        <h3>Inputs</h3>
+        <label class="heading">Amount of Normal Hours worked: <input type="text" id="normal" placeholder="35"></label>
+        <label class="heading">Amount of Overtime Hours worked: <input type="text" id="overtime" placeholder="2"></label>
+
+        <div class="process"><button onclick="totalPay()">Find Net Pay</button>
+        </div>
+        <p id="output"></p>
+    </main>
+    <footer>
+        &copy;<span id="copyright">2022</span> &bull; Noah Larsen &bull; BYU-Idaho &bull; CIT 160
+    </footer>
+</body>
+</html>
