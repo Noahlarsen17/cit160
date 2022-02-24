@@ -14,7 +14,7 @@
             //inputs
             let subtotal = parseFloat(document.getElementById('subtotal').value)
             //processing
-            if ((document.getElementById('day').value == 2 || document.getElementById('day').value == 3) && subtotal >= 50) {
+            if ((document.getElementById('day').value == '2' || document.getElementById('day').value == '3') && subtotal >= 50) {
                 discount = subtotal * .10
                 total_no_tax = subtotal - discount
                 total = total_no_tax + (total_no_tax * tax)
