@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Times Five</title>
+</head>
+
+<body>
+    <div id="output"></div>
+
+    <script>
+        function findValues(n) {
+            //processing
+            let array = []
+            for(let i = 0; i <= n; i++) {
+                array.push(5*i)
+            }
+            return array
+        }
+        const result = findValues(12)
+        document.querySelector("#output").innerHTML = ` ${result} `
+    </script>
+</body>
+
+</html>
