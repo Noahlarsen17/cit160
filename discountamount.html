@@ -27,7 +27,7 @@
             let subtotal = parseFloat(document.querySelector('#subtotal').value);
             let tax = parseFloat(document.querySelector('#state').value);
             let discount = dayDiscount();
-            subtotal = subtotal * (1-discount);
+            total = subtotal * (1-discount);
             let adiscount = amountDiscount(subtotal);
             total = total - (subtotal * adiscount)
 
@@ -35,7 +35,7 @@
 
             document.querySelector('#total').innerHTML = `Total Amount Due: $${total.toFixed(2)}`;
         }
-        
+
         function amountDiscount(st) {
             let adiscount = 0;
             if ( st > 100) {
