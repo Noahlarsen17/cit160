@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Discount Function</h1>
+    <label for="Subtotal"><input type="text" id="subtotal"></label>
+    <label for="state">
+        <select name="state" id="state">
+            <option value="" selected disabled>Choose your state</option>
+            <option value=".08">Virginia</option>
+            <option value=".07">Ohio</option>
+            <option value=".05">Nevada</option>
+        </select>
+    </label><br><br>
+    <button onclick="processingTotal()">Processing Total</button>
+    <div id="total"></div>
+
+    <script>
+        function processingTotal() {
+            let total = 0;
+
+            let subtotal = parseFloat(document.querySelector('#subtotal').value);
+            let tax = parseFloat(document.querySelector('#state').value);
+            let discount = dayDiscount();
+            subtotal = subtotal * (1-discount);
+            let adiscount = amountDiscount(subtotal);
+            total = total - (subtotal * adiscount)
+
+            total = total + total * tax;
+
+            document.querySelector('#total').innerHTML = `Total Amount Due: $${total.toFixed(2)}`;
+        }
+        
+        function amountDiscount(st) {
+            let adiscount = 0;
+            if ( st > 100) {
+                adiscount = .10;
+            }
+            return adiscount
+        }
+        function dayDiscount() {
+            let d = new Date();
+            let discount = 0;
+            let dayofweek = d.getDay();
+            switch (dayofweek) {
+                case 1:
+                    discount = .10;
+                    break;
+                case 2:
+                    discount = .15;
+                    break;
+                case 3:
+                    discount = .20;
+                    break;
+                case 4:
+                    discount = .15;
+                    break;
+                case 5:
+                    discount = .05;
+                    break;
+            }
+            return discount
+        }
+    </script>
+</body>
+</html>
