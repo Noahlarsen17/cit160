@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Windchill Calculator</title>
+</head>
+
+<body>
+    <label for="temperature">Temperature in Fahrenheit<input type="text" id="temperature"></label>
+    <label for="wind speed">Wind Speed in Miles per Hour<input type="text" id="windspeed"></label>
+    <button onclick="doInputOutput()">Windchill</button>
+    <div id="output"></div>
+
+    <Script>
+        function doInputOutput() {
+            //input from user
+            let temperature = parseFloat(document.querySelector('#temperature').value);
+            let windSpeed = parseFloat(document.querySelector('#windspeed').value);
+            //call windchill function
+            let windchill = windChill(temperature, windSpeed);
+            //output answer
+            document.querySelector('#output').innerHTML = `The wind chill is ${windchill.toFixed(2)} in Fahrenheit!`
+
+        }
+
+        function windChill(tempF, speed) {
+            let windChill = 0;
+            if (tempF <= 50 || windSpeed > 3) {
+                windChill = 37.74 + (0.6215 * tempF) - (35.75 * speed ** .16) + (.4275 * tempF * speed ** .16)
+            }
+            return windChill
+        }
+    </Script>
+</body>
+
+</html>
